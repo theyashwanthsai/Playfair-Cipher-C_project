@@ -69,7 +69,7 @@ int strsplit()
         }
     }
 }
-int encr()
+int encrypt()
 {
     
     int i,j,k,r1,c1,r2,c2;
@@ -95,6 +95,7 @@ int encr()
         }
             //printf("\n");
     }
+    // rule 1: horizontal line
     if (r1 == r2)
     {
         if (c2 == 4)
@@ -102,6 +103,7 @@ int encr()
         else
             printf("%c%c",table[r1][c1+1],table[r2][c2+1]); 
     }
+    // rule 2: veritcal line
     if (c1 == c2)
     {
         if (r2 == 4)
@@ -109,10 +111,55 @@ int encr()
         else
             printf("%c%c",table[r1+1][c1],table[r2+1][c2]);
     }
+    // rule 3: rectangle law
     if (r1 != r2 && c1 != c2)
         printf("%c%c",table[r1][c2],table[r2][c1]);
     return 0 ;
     
+}
+void decrypt()
+{
+    int i, j, k, r1, c1, r2, c2;
+    char s[2], a;
+
+    printf("Enter the string :- ");
+    scanf("%s", s);
+    for (i = 0; i < 5; i++)
+    {
+        for (j = 0; j < 5; j++)
+        {
+            if (table[i][j] == toupper(s[0]))
+            {
+                r1 = i;
+                c1 = j;
+            }
+            if (table[i][j] == toupper(s[1]))
+            {
+                r2 = i;
+                c2 = j;
+            }
+        }
+        //printf("\n");
+    }
+    // rule 1: horizontal line
+    if (r1 == r2)
+    {
+        if (c1 == 1)
+            printf("%c%c", table[r1][5], table[r2][c2 - 1]);
+        else
+            printf("%c%c", table[r1][c1 - 1], table[r2][c2 - 1]);
+    }
+    // rule 2: vertical line
+    if (c1 == c2)
+    {
+        '' if (r1 == 1)
+            printf("%c%c", table[5][c1], table[r2 - 1][c2]);
+        else printf("%c%c", table[r1 - 1][c1], table[r2 - 1][c2]);
+    }
+    // rule 3: rectangle law.
+    if (r1 != r2 && c1 != c2)
+        printf("%c%c", table[r1][c2], table[r2][c1]);
+    return 0;
 }
 
 
