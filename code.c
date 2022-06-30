@@ -90,7 +90,7 @@ void encr()
     printf("Enter the string to encrypt:- ");
     scanf("%s", s);
     printf("\nThe encrypted cipher:\n");
-
+    check(a);
     for (k = 0; k < strlen(s); k = k + 2)
     {
         for (i = 0; i < 5; i++)
@@ -140,7 +140,7 @@ void decrypt()
     scanf("%s", s);
     printf("The decrypted cipher:\n");
 
-    for (k = 0; k <= strlen(s); k = k + 2)
+    for (k = 0; k < strlen(s); k = k + 2)
     {
         {
             for (i = 0; i < 5; i++)
