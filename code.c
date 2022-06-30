@@ -163,7 +163,7 @@ void decrypt()
             // rule 1: horizontal line
             if (r1 == r2)
             {
-                if (c1 == 1)
+                if (c1 == 0)
                 {
                     printf("%c%c", table[r1][4], table[r2][c2 - 1]);
                 }
@@ -175,7 +175,7 @@ void decrypt()
             // rule 2: vertical line
             if (c1 == c2)
             {
-                if (r1 == 1)
+                if (r1 == 0)
                 {
                     printf("%c%c", table[4][c1], table[r2 - 1][c2]);
                 }
